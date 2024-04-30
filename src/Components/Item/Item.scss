@@ -1,0 +1,33 @@
+$primary: #c99ee5;
+
+$secondary: #71a9dd;
+
+.card {
+    background-color: $primary;
+    margin-top: 30px;
+    flex-direction: row;
+}
+
+.btn-info {
+    background-color: $secondary;
+    margin: 10px;
+}
+
+// .row {
+//     flex-direction: row;
+// }
+
+// .item-card {
+//     margin-top: 30px;
+//     background-color: $primary;
+//     display: inline-block;
+//     margin-right: 10px;
+// }
+
+// .item-wrapper {
+//     display: flex;
+//     flex-wrap: wrap;
+//     justify-content: center;
+//     margin-bottom: 10px;
+//     background-color: $primary;
+// }
