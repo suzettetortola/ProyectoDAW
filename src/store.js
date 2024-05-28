@@ -1,13 +1,13 @@
 import { configureStore } from "@reduxjs/toolkit";
 import goalsSlice from "./Reducers/goalsSlice";
 import tasksSlice from "./Reducers/tasksSlice";
-import optionSlice from "./Reducers/optionSlice";
+import optionsSlice from "./Reducers/optionsSlice";
 
 export default configureStore({
-    refucer: {
-        goals: goalReducer,
-        tasks: taskReducer,
-        option: optionReducer,
+    reducer: {
+        goals: goalsSlice,
+        tasks: tasksSlice,
+        option: optionsSlice,
     }
 })
 

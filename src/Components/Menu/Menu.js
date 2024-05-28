@@ -2,14 +2,21 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 // import NavDropdown from 'react-bootstrap/NavDropdown';
-// import { changeOption } from '../../Reducers/optionSlice'
+import { useSelector, useDispatch } from 'react-redux';
+import { changeOption } from '../../Reducers/optionsSlice';
 
 function Menu() {
-    // const changeOptionFunc = (e) => (
+    const option = useSelector((state) => state.option.value);
+    const dispatch = useDispatch();
 
-    //     const dispatch = useDispatch();
+    const changeOptionFunction = (e) => {
+        e.preventDefault();
+        if (option === 'tasks')
+            dispatch(changeOption('goals'));
+        else
+            dispatch(changeOption('tasks'))
+    };
 
-    // )
     return (
         <Navbar expand="lg" className="bg-body-tertiary">
             <Container>
@@ -17,8 +24,8 @@ function Menu() {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
-                        <Nav.Link href="#tasks">Tasks</Nav.Link>
-                        <Nav.Link href="#goals">Goals</Nav.Link>
+                        <Nav.Link eventKey='tasks' onClick={changeOptionFunction}>Tasks</Nav.Link>
+                        <Nav.Link eventKey='goals' onClick={changeOptionFunction}>Goals</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Container>
